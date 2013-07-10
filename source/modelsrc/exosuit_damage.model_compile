@@ -1,0 +1,5 @@
+
+geometry         					"exosuit_damage.dae"
+physics         					"exosuit_cm_physics.dae"
+
+animation_model	"models/marine/exosuit/exosuit_cm.model"

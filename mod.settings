@@ -1,0 +1,10 @@
+name        = "Last Stand"
+source_dir  = "source"
+output_dir  = "output"
+description = [=[This is the Last Stand mod made by UWE during the 1-week mod jam. 
+
+As marines, your team must survive for 2.5 minutes. If you die, you are out until the round is over. If at least 1 Marine is left standing, marines win. 
+
+As aliens, your goal is to eliminate all marines. You respawn infinitely and can choose from three lifeform variants each spawn. As the round progresses, you will have access to more powerful variants.]=]
+image       = "preview.jpg"
+publish_id = "84f9efa"

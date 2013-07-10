@@ -1,0 +1,6 @@
+shader = "shaders/model_emissive.surface_shader"
+albedoMap = "models/dropship1.dds"
+normalMap = "models/dropship1_normal.dds"
+specularMap = "models/dropship1_spec.dds"
+emissiveMap = "models/dropship1_illum.dds"
+surface = "metal"

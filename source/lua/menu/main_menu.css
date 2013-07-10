@@ -1,0 +1,1754 @@
+css = [[
+
+slidebar {
+    border-width: 0px;
+    background-color: #000;
+}
+
+slidebar.vertical
+{
+    height: 250px;
+    width: 20px;
+}
+
+slidebar.horizontal
+{
+    height: 20px;
+    width: 250px;
+}
+
+slidebar.vertical slidebutton.min {
+    background-image: path(ui/menu/arrow_vert.dds) coords(0.0,0.0,1.0,1.0);
+    vertical-align: top;
+    horizontal-align: center;
+    left: -12px;
+    width: 24px;
+    height: 24px;
+    top: 0px;
+}
+
+slidebar.vertical slidebutton.max {
+    background-image: path(ui/menu/arrow_vert.dds) coords(1.0,1.0,0.0,0.0);
+    vertical-align: bottom;
+    horizontal-align: center;
+    left: -12px;
+    width: 24px;
+    height: 24px;
+    top: -24px;
+}
+
+slidebar.horizontal slidebutton.min {
+    background-image: path(ui/menu/arrow_horiz.dds) coords(0.0,0.0,1.0,1.0);
+    width: 24px;
+    height: 24px;    
+    vertical-align: center;
+    horizontal-align: left;
+    top: -12px;
+    border-width: 0px;
+}
+
+slidebar.horizontal slidebutton.max {
+    background-image: path(ui/menu/arrow_horiz.dds) coords(1.0,1.0,0.0,0.0);
+    width: 24px;
+    height: 24px;
+    vertical-align: center;
+    horizontal-align: right;
+    top: -12px;
+    left: -24px;
+    border-width: 0px;
+}
+
+slidebar .slide_button {
+    hover-background-color: #AEF0F0;
+    background-color: #7AA8A8;
+    border-width: 0px;
+}
+
+slidebar.horizontal .slide_button {
+    width:  12px;
+    height: 24px;
+    vertical-align: center;
+    top: -12px;
+}
+
+slidebar.vertical .slide_button {
+    width:  24px;
+    height: 12px;
+    horizontal-align: center;
+    vertical-align: top;
+    left: -12px;
+}
+
+progressbar {
+    border-width: 0px;
+    background-color: #000;
+}
+
+progressbar .bar {
+    background-color: #7AA8A8;
+    border-width: 0px;
+    width: 20px;
+    height: 20px;
+}
+
+font
+{
+    font-name: fonts/AgencyFB_large.fnt;
+}
+
+font.findpeople_font
+{
+    text-color: #ffffff;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+}
+
+logview font
+{
+    text-color: #CCCCCC;
+    background-color: rgba(1,1,1,0);
+    font-name: fonts/AgencyFB_small.fnt;
+}
+
+logview font.chat
+{
+    text-color: #ff9900;
+    background-color: rgba(1,1,1,0);
+    font-name: fonts/AgencyFB_small.fnt;
+}
+
+logview
+{
+    background-color: rgba(1,1,1,0);
+}
+
+ticker
+{
+    background-color: rgba(1,1,1,0);
+}
+
+ticker font
+{
+    text-color: rgba(1,1,1,1);
+    background-color: rgba(1,1,1,0);
+    font-name: fonts/AgencyFB_small.fnt;
+}
+
+ticker font.tweet_name 
+{
+    text-color: rgb(0.49, 0.9, 0.98);
+}
+
+font.showwindow_hidden, font.showwindow_animation1, font.showwindow_animation2
+{
+    scaling: true;
+    font-name: fonts/AgencyFB_large.fnt;
+    opacity: 0px;
+}
+
+font.showwindow_hidden
+{
+    text-color: rgba(0.74, 0.95, 1, 0);
+    left: 350px;
+    top: 50%;
+}
+
+font.showwindow_animation1_close
+{
+    text-color: rgba(0.74, 0.95, 1, 1) time(0.3);
+    left: 350px time(0.3) animName(SHOWWINDOW_LEFT);
+}
+
+font.showwindow_animation2_close
+{
+    text-color: rgba(1, 1, 1, 1) time(0.5);    
+    top: 50% time(0.3) animName(SHOWWINDOW_DOWN);
+}
+
+font.showwindow_animation1
+{
+    top: 15% time(0.3) animName(SHOWWINDOW_UP);
+    text-color: rgba(0.74, 0.95, 1, 1) time(0.3) func(AnimateSqRt);
+}
+
+font.showwindow_animation2
+{
+    right: 40% time(0.3) animName(SHOWWINDOW_RIGHT) func(AnimateSqRt);
+    text-color: rgba(1, 1, 1, 0.2) time(0.5);
+}
+
+slidebar.window_scroller
+{
+    scaling: true;
+    height: 678px;
+    width: 28px;
+    bottom: 64px;
+    left: -30px;
+}
+
+window.main_frame
+{
+    scaling: false;
+    background-color: #FFFFFF;
+    opacity: 0.4;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1,1,1,0)
+    background-image: path(ui/menu/grid.dds);
+    background-repeat: true;
+}
+
+.main_frame ticker
+{
+    bottom: 50px;
+    horizontal-align: center;
+}
+
+window.main_frame image.logo
+{
+    height: 337px;
+    width: 690px;
+    horizontal-align: right;
+    right: 220px;
+    top: 200px;
+    background-image: path(ui/menu/logo.dds) coords(0.0,0.0,1.0,1.0);
+}
+
+window.main_frame image.scanline
+{
+    scaling: false;
+    height: 64px;
+    width: 100%;
+    top: -64px;
+    bottom: -64px time(4);
+    background-color: rgba(1,1,1,1);
+    background-image: path(ui/menu/scanLine_big.dds) coords(0.0,0.0,1.0,1.0);
+    opacity: 0.4;
+}
+
+image.tvglare
+{
+    scaling: false;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: path(ui/menu/tv_glare.dds);
+}
+
+image.tvglare_dark
+{
+    scaling: false;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+window.main_frame image.menu_bg_show
+{
+    opacity: 0;
+    opacity: 1 time(0.5) animName(MAIN_MENU_OPACITY);
+
+    left: 0px;
+    width: 630;
+    height: 600;
+    
+    vertical-align: center;
+    top: -60%px;
+    top: -240px time(0.5) animName(MAIN_MENU_MOVE) func(AnimateSqRt);
+
+    background-image: path(ui/menu/transparent.dds);
+}
+
+window.main_frame image.menu_bg_hide
+{
+    opacity: 1;
+    opacity: 0 time(0.5) animName(MAIN_MENU_OPACITY);
+
+    left: 0px;
+    width: 630;
+    height: 600;
+    
+    vertical-align: center;
+    top: -240px;
+    top: -60% time(0.5) animName(MAIN_MENU_MOVE) func(AnimateSqRt);
+
+    background-image: path(ui/menu/transparent.dds);
+}
+
+window.main_frame image image.profile
+{
+    inherit-opacity: true;
+
+    width: 396;
+    height: 118;
+    left: 240px;
+    inherit-opacity: true;
+    
+    background-color: #FFFFFF;
+    background-image: path(ui/menu/profile_bg.dds) coords(0.0, 0.0, 1.0, 1.0);
+}
+
+image.profile image.avatar
+{
+    top: 14px;
+    left: 14px;
+    width: 89px;
+    height: 89px;
+}
+
+image.profile image
+{
+    inherit-opacity: true;
+
+    width: 36px;
+    height: 48px;
+    bottom: -3px;
+    background-color: rgb(1,1,1,1);
+    hover-background-color: rgb(1.0,1.0,0.6,1);
+}
+
+font.profile
+{
+    left: 120px;
+    top: 3px;
+    font-name: fonts/AgencyFB_large.fnt;
+    text-color: rgb(1.0,0.8,0.8,1);
+    opacity: 0;
+}
+
+image.se_disabled
+{
+    left: 225px;
+    background-image: path(ui/menu/profile_icons_off.dds) pixelCoords(0, 0, 24, 32);
+}
+
+image.devtoolsicon
+{
+    left: 189px;
+    background-image: path(ui/menu/profile_icons_off.dds) pixelCoords(24, 0, 48, 32);
+}
+
+image.dlc_1_disabled
+{
+    left: 225px;
+    background-image: path(ui/menu/profile_icons_off.dds) pixelCoords(48, 0, 72, 32);
+}
+
+image.dlc_2_disabled
+{
+    left: 261px;
+    background-image: path(ui/menu/profile_icons_off.dds) pixelCoords(72, 0, 96, 32);
+}
+
+image.dlc_3_disabled
+{
+    left: 297px;
+    background-image: path(ui/menu/profile_icons_off.dds) pixelCoords(96, 0, 120, 32);
+}
+
+image.dlc_4_disabled
+{
+    left: 333px;
+    background-image: path(ui/menu/profile_icons_off.dds) pixelCoords(120, 0, 144, 32);
+}
+
+image.se_enabled
+{
+    left: 153px;
+    background-image: path(ui/menu/profile_icons_on.dds) pixelCoords(0, 0, 24, 32);
+}
+
+image.dlc_1_enabled
+{
+    left: 225px;
+    background-image: path(ui/menu/profile_icons_on.dds) pixelCoords(48, 0, 72, 32);
+}
+
+image.dlc_2_enabled
+{
+    left: 261px;
+    background-image: path(ui/menu/profile_icons_on.dds) pixelCoords(72, 0, 96, 32);
+}
+
+image.dlc_3_enabled
+{
+    left: 297px;
+    background-image: path(ui/menu/profile_icons_on.dds) pixelCoords(96, 0, 120, 32);
+}
+
+image.dlc_4_enabled
+{
+    left: 333px;
+    background-image: path(ui/menu/profile_icons_on.dds) pixelCoords(120, 0, 144, 32);
+}
+
+window.main_frame image link
+{
+    text-color: rgb(1.0, 0.8, 0.8);
+    hover-text-color: rgb(1, 1.0, 1.0);
+    font-name: fonts/AgencyFB_large.fnt;
+    hover-background-color: rgba(1,1,1,1);
+    
+    left: 0px;
+    border-width: 0px;
+
+    text-padding-bottom: 4px;
+    text-padding-left: 450px;
+    text-padding-right: 180px;
+    
+    text-align: right;
+    
+    frame: 15 time(1.6) animName(ANIMATE_LINK_BG);
+    background-image: path(ui/menu/link_bg.dds) pixelCoords(0, 0, 400, 32);
+}
+
+link.play font, link.tutorial font, link.options font, link.mods font, link.exit font
+{
+    right: 440px;
+    hover-background-color: rgba(1,1,1,1);
+    background-image: path(ui/menu/link_icon_bg.dds) pixelCoords(0, 0, 48, 32);
+    
+    text-padding-bottom: 4px;
+    text-padding-left: 30px;
+    text-padding-right: 30px;
+    font-name: fonts/AgencyFB_large.fnt;
+    hover-text-color: rgb(1.0, 0.8, 0.8);
+    
+    text-align: center;
+}
+
+link.play
+{
+    top: 120px;
+}
+
+link.tutorial
+{
+    top: 190px;
+}
+
+link.options
+{
+    top: 260px;
+}
+
+link.mods
+{
+    top: 330px;
+}
+
+link.exit
+{
+    top: 400px;
+}
+
+link.resume_ingame font, link.readyroom_ingame font, link.play_ingame font, link.options_ingame font, link.tutorial_ingame font, link.disconnect_ingame font
+{
+    right: 440px;
+    hover-background-color: rgba(1,1,1,1);
+    background-image: path(ui/menu/link_icon_bg.dds) pixelCoords(0, 0, 48, 32);
+    
+    text-padding-bottom: 4px;
+    text-padding-left: 30px;
+    text-padding-right: 30px;
+    font-name: fonts/AgencyFB_large.fnt;
+    hover-text-color: #898989;
+    
+    text-align: center;
+}
+
+link.resume_ingame
+{
+    top: 120px;
+}
+
+link.readyroom_ingame
+{
+    top: 190px;
+}
+
+link.play_ingame
+{
+    top: 260px;
+}
+
+link.options_ingame
+{
+    top: 330px;
+}
+
+link.tutorial_ingame
+{
+    top: 400px;
+}
+
+link.disconnect_ingame
+{
+    top: 470px;
+}
+
+window.main_menu_window
+{
+    scaling: true;
+    margin-right: 32px;
+    margin-bottom: 64px;
+    width: 1000px;
+    height: 80%;
+    top: -40%;
+    left: -500px;
+    vertical-align: center;
+    horizontal-align: center;
+    border-width: 0px;
+    opacity: 0;
+}
+
+window.play_window
+{
+    top: 5%;
+    height: 90%;
+    width: 80%;
+    left: -40%;
+    vertical-align: top;
+}
+
+window.passwordprompt_window
+{
+    scaling: true;
+    width: 400px;
+    height: 200px;
+    left: -200px;
+    top: -100px;
+    vertical-align: center;
+    horizontal-align: center;
+    border-width: 0px;
+    background-color: rgba(0.3, 0.3, 0.3, 0.75);
+}
+
+window.autojoin_window
+{
+    scaling: true;
+    width: 400px;
+    height: 200px;
+    left: -200px;
+    top: -100px;
+    vertical-align: center;
+    horizontal-align: center;
+    border-width: 6px;
+    border-color: rgba(0.3, 0.3, 0.3, 1);
+    background-color: rgba(0.2, 0.2, 0.2, 1);
+}
+
+window.playnow_window
+{
+    scaling: true;
+    width: 400px;
+    height: 200px;
+    left: -200px;
+    top: -100px;
+    vertical-align: center;
+    horizontal-align: center;
+    border-width: 0px;
+    background-color: rgba(0.3, 0.3, 0.3, 0.75);
+}
+
+window.playnow_window titlebar
+{
+    height: 36px;
+}
+
+font.playnow_title
+{
+    text-color: #CCCCCC;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+    horizontal-align: center;
+    left: -50px;
+}
+
+window button
+{
+    background-image: path(ui/menu/buttonbg.dds);
+    background-color: rgba(0.4,0.4,0.4,0.7);
+    hover-background-color: rgba(1,1,1,1);
+}
+
+button.playnow_cancel
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;
+    
+    vertical-align: bottom;
+    horizontal-align: center;
+    font-name: fonts/AgencyFB_large.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 58px;
+    left: -128px;
+}
+
+window.alert_window
+{
+    scaling: true;
+    width: 400px;
+    height: 200px;
+    left: -200px;
+    top: -100px;
+    vertical-align: center;
+    horizontal-align: center;
+    border-width: 0px;
+    background-color: rgba(0.3, 0.3, 0.3, 0.75);
+    
+}
+
+window.first_time_window
+{
+    scaling: true;
+    width: 400px;
+    height: 400px;
+    left: -200px;
+    top: -200px;
+    vertical-align: center;
+    horizontal-align: center;
+    border-width: 0px;
+    background-color: rgba(0.3, 0.3, 0.3, 0.75);
+    
+}
+
+image.first_time_video_link
+{
+    width: 200px;
+    height: 150px;
+    left: -100px;
+    top: -100px;
+    vertical-align: center;
+    horizontal-align: center;
+    background-image: path(ui/menu/firsttimevideo.dds);
+    
+    background-color: #aaaaaa;
+    hover-background-color: #ffffff;    
+}
+
+font.alerttext
+{
+    text-color: #CCCCCC;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+    left: 8px;
+    top: 32px;
+}
+
+font.first_time_message
+{
+    text-color: #CCCCCC;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+    top: 32px;
+    horizontal-align: center;
+    text-align: center;
+}
+
+button.small_bottom_right
+{
+    height: 58px;
+    width: 80px;
+    border-width: 0px;    
+
+    font-name: fonts/AgencyFB_small.fnt;
+    text-color: #8bb4c1;
+    text-padding: 10px;
+    
+    horizontal-align: center;
+    
+    bottom: 20px;
+    left: -40px;
+}
+
+font.dontshowagain
+{
+    text-color: #CCCCCC;
+    font-name: fonts/AgencyFB_tiny.fnt;
+    opacity: 0;
+    left: 160px;
+    bottom: 120px;
+}
+
+window.passwordprompt_window titlebar
+{
+    height: 36px;
+}
+
+window.autojoin_window titlebar
+{
+    height: 36px;
+    background-color: rgba(0.1,0.1,0.1,1);
+}
+
+window.passwordprompt_window form
+{
+    top: 32px;
+}
+
+window.passwordprompt_window titlebar button
+{
+
+    height: 32px;
+    width: 32px;
+    border-color: #FFFFFF;
+    
+}
+
+form textinput.serverpassword
+{
+    top: 30px;
+    width: 300px;
+    horizontal-align: center;
+    left: -150px;
+}
+
+font.passwordprompt_title
+{
+    text-color: #CCCCCC;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+    left: 30px;
+}
+
+window.main_menu_window titlebar
+{
+    opacity: 0;
+    height: 64px;
+}
+
+window.main_menu_window slidebar
+{
+    scaling: true;
+    horizontal-align: right;
+    right: 1px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-width: 0px;
+    width: 12px;
+}
+
+window.main_menu_window slidebar slidebutton.min, window.main_menu_window slidebar slidebutton.max
+{
+    border-width: 0px;
+    background-color: #bcf2ff;
+}
+
+window.main_menu_window slidebar button
+{
+    background-color: #bdf3ff;
+}
+
+window.main_menu_window titlebar button.close
+{
+    visible: false;
+}
+
+button.toprightbutton
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;
+    right: 80px;
+    top: -40px;
+    font-name: fonts/AgencyFB_large.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+}
+
+button.customgame
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;
+    right: 360px;
+    top: 4px;
+    font-name: fonts/AgencyFB_large.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+}
+
+button.bottomright
+{    
+    height: 58px;
+    width: 256px;
+    border-width: 0px;    
+
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_large.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    right: 80px;
+}
+
+button.bottomcenter
+{    
+    height: 58px;
+    width: 256px;
+    border-width: 0px;    
+
+    vertical-align: bottom;
+    horizontal-align: center;
+    font-name: fonts/AgencyFB_large.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    left: -128px;
+}
+
+button.bottomleft
+{    
+    height: 58px;
+    width: 256px;
+    border-width: 0px;    
+
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_large.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    left: 80px;
+}
+
+button.update
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;
+    
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    right: 840;
+}
+
+button.create_server
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;
+    
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 20px;
+    right: 30px;
+}
+
+button.apply
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;    
+
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    right: 60px;
+}
+
+button.back
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;
+    
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    right: 330px;
+}
+
+button.getmods
+{
+    height: 58px;
+    width: 256px;
+    border-width: 0px;
+    
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    left: 0px;
+}
+
+window content
+{
+    ignore-margin: false;
+    top: 24px;
+    scaling: true;
+    background-color: #000000;
+    opacity: 0.3;
+    border-width: 0px;
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+table.server_list_row_names
+{
+    ignore-margin: false;
+    top: 0px;
+    background-color: rgba(0.5, 0.5, 0.5, 0.3);
+    border-width: 0px;
+    width: 100%;
+    height: 32px;
+    cell-spacing: 4px;
+}
+
+table.server_list_names
+{
+    top: 168px;
+}
+
+table.server_list_row_names row
+{
+    height: 32px;
+}
+
+table.server_list_row_names row entry
+{
+    height: 32px;
+    background-color: rgba(0.1, 0.1, 0.1, 0.7);
+    hover-background-color: rgba(0.3,0.3,0.3, 0.7);
+}
+
+table.server_list_row_names row entry font
+{
+    opacity: 0;
+    font-name: fonts/AgencyFB_small.fnt;
+    text-color: #dddddd;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    vertical-text-align: center;
+ 
+}
+
+table.server_list_row_names row entry font.servername
+{
+    text-color: #bdf3ff;
+    horizontal-align: left;
+    text-align: left;
+    text-padding-left: 10;
+}
+
+table.server_browse_content
+{
+    width: 100%;
+    opacity: 0;
+    top: 2560px;
+    cell-spacing: 4px;
+}
+
+table.play_now_content
+{
+    width: 100%;
+    opacity: 0;
+    top: 12px;
+    cell-spacing: 4px;
+}
+
+serverlist
+{
+    width: 100%;
+    opacity: 0;
+}
+
+table.mod_list
+{
+    width: 100%;
+    opacity: 0;
+    top: 8px;
+    cell-spacing: 4px;
+}
+
+content.mod_list
+{
+    top: 32px;
+}
+
+table.mod_list row
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 30px;
+}
+
+table.mod_list row entry
+{
+    height: 30px;
+    opacity: 0;
+}
+
+.serverbrowse_content
+{
+    top: 200px;
+}
+
+.play_content
+{
+    top: 0px;
+}
+
+table.mod_list row entry font
+{
+    opacity: 0;
+    font-name: fonts/AgencyFB_small.fnt;
+    text-color: #FFFFFF;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    vertical-text-align: center;
+}
+
+table.mod_list row entry font.servername
+{
+    horizontal-align: left;
+    text-align: left;
+    text-padding-left: 10;
+}
+
+table.mod_list row entry font.rookieservername
+{
+    text-color: #11FF00;
+    horizontal-align: left;
+    text-align: left;
+    text-padding-left: 10;
+}
+
+table.mod_list row entry image.private
+{
+    height: 32px;
+    width: 32px;
+    left:   11px;
+    background-image: path(ui/lock.dds) pixelCoords(0, 0, 32, 32);
+}
+
+entry.modname
+{
+    width: 50%;
+}
+
+entry.state
+{
+    width: 20%;
+}
+
+entry.subscribed
+{
+    width: 20%;
+}
+
+entry.active
+{
+    width: 10%;
+}
+
+entry.favorite
+{
+    width: 3%;
+}
+
+entry.private
+{
+    width: 3%;
+}
+
+entry.servername
+{
+    width: 40%;
+}
+
+entry.game
+{
+    width: 7%;
+}
+
+entry.map
+{
+    width: 15%;
+}
+
+entry.players
+{
+    width: 15%;
+}
+
+entry.rate
+{
+    width: 7.5%;
+}
+
+entry.ping
+{
+    width: 7.5%;
+}
+
+font.player_count_full
+{
+    text-color: #FF0000;
+    text-align: center;
+    horizontal-align: center;
+}
+
+font.player_count_free
+{
+    text-color: #FFFFFF;
+    text-align: center;
+    horizontal-align: center;
+}
+
+font.ping_good
+{
+    text-color: #00FF00;
+    text-align: center;
+    horizontal-align: center;
+}
+
+font.ping_moderate
+{
+    text-color: #FFFF00;
+    text-align: center;
+    horizontal-align: center;
+}
+
+font.ping_bad
+{
+    text-color: #FF0000;
+    text-align: center;
+    horizontal-align: center;
+}
+
+font.mod_name
+{
+    text-color: #FFFFFF;
+    text-align: left;
+    horizontal-align: left;
+    left: 16px;
+}
+
+image.blinking_arrow
+{
+    frame: 15 time(1.6) animName(ANIMATE_BLINKING_ARROW_TWO);
+    background-image: path(ui/menu/blinking_arrow.dds) pixelCoords(0, 0, 64, 32);
+    
+    width: 56px;
+    height: 42px;
+    left: -56px;
+    top: -6px;
+}
+
+image.blinking_arrow_two 
+{
+    frame: 15 time(1.6) animName(ANIMATE_BLINKING_ARROW);
+    background-image: path(ui/menu/blinking_arrow.dds) pixelCoords(0, 0, 64, 32);
+    
+    horizontal-align: center;
+    vertical-align: center;
+    width: 56px;
+    height: 42px;
+    left: -28px;
+    top: -40px;
+}
+
+image.highlight_server
+{
+    frame: 15 time(1.6) animName(ANIMATE_LINK_BG);
+    background-image: path(ui/menu/server_select_bg.dds) pixelCoords(0, 0, 400, 32);
+    
+    width: 100%;
+    height: 32px;
+}
+
+image.select_server
+{
+    opacity: 0.2;
+    
+    width: 100%;
+    height: 32px;
+    
+    top: -200px;
+    left: 0px;
+}
+
+button.tab
+{    
+    height: 64px;
+    width: 200px;
+    border-width: 0px;    
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    background-color: #000000;
+    background-image: none;
+    opacity: 0;
+    hover-background-color: rgba(0,0,0,0);
+    vertical-text-align: center;
+    text-align: center;
+}
+
+image.tab_background
+{    
+    height: 64px;
+    width: 200px;
+    border-width: 0px;
+    background-image: path(ui/menu/tabbackground.dds);
+}
+
+.option_window content
+{
+    top: 0px;
+}
+
+.tutorial_window content
+{
+    top: 0px;
+}
+
+form.serverfilter
+{
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.3;    
+}
+
+form.options, form.createserver, form.keybindings
+{
+    width: 100%;
+    top: 20px;
+}
+
+form.options
+{
+    height: 1600px;
+}
+
+form.createserver
+{
+    height: 700px;
+}
+
+form.keybindings
+{
+    height: 2100px;
+}
+
+form textinput
+{
+    background-color: #000000;
+    text-color: #8bb4c1;
+}
+
+button.slider_button
+{
+    width: 10px;
+    height: 14px;
+    vertical-align: center;
+    top: -8px;
+}
+
+button.slider_arrow
+{
+    width: 24px;
+    height: 24px;
+    vertical-align: center;
+    top: -12px;
+}
+
+font.option_label
+{
+    text-color: #CCCCCC;
+    opacity: 0;
+    font-name: fonts/AgencyFB_small.fnt;
+    text-align: left;
+    width: 300px;
+    left: 30px;
+}
+
+button.fps
+{
+    height: 58px;
+    width: 100px;
+    border-width: 0px;    
+
+    vertical-align: top;
+	top: 0px;
+
+	horizontal-align: right;
+	right: 70px;
+
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    background-color: #000000;
+    text-padding: 16px;
+	text-align: left;
+    opacity: 0.5;
+    hover-background-color: rgba(0.0,0.0,0.0,0.7);
+}
+
+button.server_count_display
+{
+    height: 58px;
+    width: 100px;
+    border-width: 0px;
+    
+    vertical-align: top;
+	top: 0px;
+    
+	horizontal-align: right;
+	right: 70px;
+    
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    background-color: #000000;
+    text-padding: 16px;
+	text-align: left;
+    opacity: 0.5;
+    hover-background-color: rgba(0.0,0.0,0.0,0.7);
+}
+
+form .option_input
+{
+    width: 400px;
+    height: 40px;
+    font-name: fonts/AgencyFB_small.fnt;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 520px;
+}
+
+form.sound_options .option_input
+{
+    width: 620px;
+    height: 40px;
+    font-name: fonts/AgencyFB_small.fnt;
+    background-color: rgba(0, 0, 0, 0.4);
+    left: 300px;
+}
+
+form .option_input_conflict
+{
+    width: 400px;
+    height: 40px;
+    font-name: fonts/AgencyFB_small.fnt;
+    background-color: rgba(1, 0, 0, 0.4);
+    left: 520px;
+}
+
+form textinput.option_input
+{
+    left:  540px;
+    width: 380px;
+}
+
+form textinput image.textcursor
+{
+    background-color: #8bb4c1;
+    height: 3px;
+    width: 12px;
+}
+
+form checkbox
+{
+    height: 40px;
+    width: 40px;
+}
+
+checkbox.firsttimecheckbox
+{
+    height: 20px;
+    width: 20px;
+    bottom: 100px;
+    left: 120px;
+}
+
+checkbox.firsttimecheckbox image.checked
+{
+    background-image: path(ui/menu/checked.dds);
+    height: 20px;
+    width: 20px;
+}
+
+form checkbox image.checked
+{
+    background-image: path(ui/menu/checked.dds);
+    height: 40px;
+    width: 40px;
+}
+
+form dropdown button.activeoption
+{
+    font-name: fonts/AgencyFB_small.fnt;
+    text-color: #969696;
+}
+
+font.dropdownentry
+{
+    horizontal-align: center;
+    font-name: fonts/AgencyFB_small.fnt;
+    text-color: #969696;
+    opacity: 0;
+}
+
+button.dropdownarrow
+{
+    width: 24px;
+    height: 24px;
+    vertical-align: center;
+    top: -12px;
+}
+
+form textinput.servername
+{
+    left: 256px;
+    width: 500px;
+}
+
+form textinput.password
+{
+    left: 256px;
+    top: 100px;
+    width: 500px;
+}
+
+form dropdown.map
+{
+    background-color: #000000;
+    text-color: #969696;
+    horizontal-align: left;
+    left: 256px;
+    width: 500px;
+    height: 32px;
+    top: 200px;
+}
+
+form dropdown.modes
+{
+    background-color: #000000;
+    text-color: #969696;
+    horizontal-align: left;
+    left: 256px;
+    width: 500px;
+    height: 32px;
+    top: 300px;
+}
+
+form dropdown.players
+{
+    background-color: #000000;
+    text-color: #969696;
+    horizontal-align: left;
+    left: 256px;
+    width: 128px;
+    height: 32px;
+    top: 400px;
+}
+
+form checkbox.lan
+{
+    horizontal-align: right;
+    left: -384px;
+    top: 400px;
+}
+
+font.input_description
+{
+    text-color: #CCCCCC;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+    text-align: right;
+    vertical-text-align: center;
+    vertical-align: center;
+    left: -16px;
+}
+
+image.play_now_content
+{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+link.tut_link_0, link.tut_link_1, link.tut_link_2, link.tut_link_3, link.tut_link_4, link.tut_link_5, link.tut_link_6, link.tut_link_7, link.tut_link_8, link.tut_link_9, link.tut_link_10, link.tut_link_11
+{
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #8bb4c1;
+    opacity: 0;
+    left: 60px;
+    hover-background-color: rgba(0, 0, 0, 0);
+}
+
+link.tut_link_0
+{
+    top: 0px;
+}
+
+link.tut_link_1
+{
+    top: 60px;
+}
+
+link.tut_link_2
+{
+    top: 120px;
+}
+
+link.tut_link_3
+{
+    top: 180px;
+}
+
+link.tut_link_4
+{
+    top: 240px;
+}
+
+link.tut_link_5
+{
+    top: 300px;
+}
+
+link.tut_link_6
+{
+    top: 360px;
+}
+
+link.tut_link_7
+{
+    top: 420px;
+}
+
+link.tut_link_8
+{
+    top: 480px;
+}
+
+link.tut_link_9
+{
+    top: 540px;
+}
+
+link.tut_link_10
+{
+    top: 600px;
+}
+
+link.tut_link_11
+{
+    top: 660px;
+}
+
+form.filter_form
+{
+    top: 64px;
+    width: 100%;
+    height: 168px;
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+form.filter_form textinput
+{
+    height: 32px;
+    width: 128px;
+}
+
+form.filter_form checkbox
+{
+    height: 32px;
+    width: 32px;
+}
+
+form.filter_form checkbox image.checked
+{
+    background-image: path(ui/menu/checked.dds);
+    height: 32px;
+    width: 32px;
+}
+
+form.filter_form slidebar
+{
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.filter_gamemode
+{
+    top: 16px;
+    left: 80px;
+}
+
+.filter_mapname
+{
+    top: 56px;
+    left: 80px;
+}
+
+font.filter_custom_content_hint
+{
+    text-color: #FFDD00;
+    opacity: 0;
+    font-name: fonts/AgencyFB_small.fnt;
+    horizontal-align: left;
+    left: 350px;
+    vertical-align: bottom;
+    vertical-text-align: bottom;
+    text-align: center;
+}
+
+.filter_favorites
+{
+    top: 96px;
+    left: 176px;
+}
+
+.filter_passworded
+{
+    top: 56px;
+    left: 400px;
+}
+
+.filter_rookie
+{
+    top: 16px;
+    left: 400px;
+}
+
+.filter_tickrate
+{
+    top: 16px;
+    right: 240px;
+}
+
+.filter_maxping
+{
+    top: 56px;
+    right: 240px;
+}
+
+.filter_hasplayers
+{
+    top: 16px;
+    right: 16px;
+}
+
+.filter_full
+{
+    top: 56px;
+    right: 16px;
+}
+
+button.warning_label
+{
+
+    height: 58px;
+    width: 400px;
+    border-width: 0px;
+    
+    vertical-align: bottom;
+    top: 4px;
+    font-name: fonts/AgencyFB_medium.fnt;
+    text-color: #CC2C2C;
+    text-padding: 16px;
+    
+    bottom: 0px;
+    right: 600px;
+
+}
+
+
+font.filter_description
+{
+    text-color: #888888;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+    left: -16px;
+    top: 2 px;
+    text-align: right;
+    vertical-text-align: center;
+    vertical-align: center;
+}
+
+image.filter_favorites_icon
+{
+    background-image: path(ui/menu/favorite.dds);
+    left: -160px;
+    top: -14 px;
+    width: 28;
+    height: 28;
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+font.auto_join_text
+{
+    top: 10px;
+    text-align: center;
+    horizontal-align: center;
+    font-name: fonts/AgencyFB_small.fnt;
+    opacity: 0;
+    text-color: #CCCCCC;
+}
+
+font.auto_join_text_servername
+{
+    top: 106px;
+    text-align: center;
+    horizontal-align: center;
+    font-name: fonts/AgencyFB_tiny.fnt;
+    opacity: 0;
+    text-color: #CCCCCC;
+}
+
+image.top_row_favorite
+{
+    background-image: path(ui/menu/favorite.dds);
+}
+
+image.top_row_private
+{
+    background-image: path(ui/lock.dds);
+}
+
+image.top_row_favorite, image.top_row_private
+{
+    width: 28;
+    height: 28;
+    horizontal-align: center;
+    vertical-align: center;
+    left: -14;
+    top: -14;
+    background-color: rgba(0,0,0,1);
+}
+
+
+
+]]

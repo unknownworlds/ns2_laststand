@@ -1,0 +1,131 @@
+
+//----------------------------------------
+//  A pile of marine equipment. Randomly spawns cool stuff upon certain events.
+//  Server-side only, since clients should only know about
+//----------------------------------------
+
+Script.Load("lua/Mixins/ModelMixin.lua")
+
+// tweakable vars
+
+local gEquipPiles = {}
+
+local kEquipDecks = 
+{
+    {
+        kTechId.DropSentry,
+        kTechId.DropWelder,
+        kTechId.DropMines,
+        kTechId.DropShotgun,
+        kTechId.DropGrenadeLauncher,
+        kTechId.DropFlamethrower
+    },
+
+    {
+        kTechId.DropJetpack,
+        kTechId.DropMedPack,
+        kTechId.DropMedPack,
+        kTechId.DropAmmoPack,
+        kTechId.DropAmmoPack,
+    }
+}
+
+class 'EquipPile' (Entity)
+
+EquipPile.kModelName = PrecacheAsset("models/marine_crate_01.model")
+
+local networkVars = { }
+AddMixinNetworkVars(BaseModelMixin, networkVars)
+AddMixinNetworkVars(ModelMixin, networkVars)
+
+function EquipPile:OnInitialized()
+
+    self:SetModel(EquipPile.kModelName)
+
+end
+
+function EquipPile:OnCreate()
+
+    table.insert( gEquipPiles, self )
+
+    self:SetUpdates(true)
+
+    if Server then
+        table.insert( gGameEventListeners, self )
+    end
+
+    InitMixin(self, BaseModelMixin)
+    InitMixin(self, ModelMixin)
+
+    //self:SetPhysicsGroup(PhysicsGroup.MediumStructuresGroup)
+
+end
+
+function EquipPile:SpewFrom(techIds, count)
+
+    for i = 1,count do
+
+    /*
+        local origin = GetRandomSpawnForCapsule( 0.2, 0.5, self:GetOrigin(), 0.5, 4, nil )
+        if not origin then
+            origin = self:GetOrigin() + Vector(math.random()*4.0,0,math.random()*4)
+        end
+        origin = GetGroundAtPosition( origin, nil, PhysicsMask.AllButPCs)
+        */
+
+
+        local origin = GetRandomSpawnForCapsule( 0.2, 0.2, self:GetOrigin()+Vector(0,3,0), 0.2, 4, EntityFilterAll )
+    if not origin then
+        DebugPrint("NO RANDOM SPAWN")
+        origin = self:GetOrigin() + Vector(1,0,1)
+    end
+        //origin = GetGroundAtPosition( origin, EntityFilterAll, PhysicsMask.AllButPCs)
+
+
+        local teamNumber = 1
+
+        // randomly choose
+        local techId = techIds[ math.random( #techIds ) ]
+        local ent = CreateEntityForTeam( techId, origin, teamNumber, nil )
+    
+    end
+
+end
+
+function EquipPile:Spew()
+
+    if Server then
+
+        local numMarines = GetGamerules():GetNumMarinePlayers()
+
+        self:SpewFrom( kEquipDecks[1], 2*numMarines )
+        self:SpewFrom( kEquipDecks[2], 2*numMarines )
+        //self:SpewFrom( kEquipDecks[3], math.max(1, math.floor(numMarines/4.0)) )
+
+    end
+
+end
+
+function EquipPile:OnGameStart()
+
+    self:Spew()
+
+end
+
+function EquipPile:OnUpdate(dt)
+
+end
+
+Shared.LinkClassToMap( "EquipPile", "ls_equip_pile", networkVars )
+
+//----------------------------------------
+//  in-game tuning 
+//----------------------------------------
+
+Event.Hook("Console_ls_spew", function(client)
+            for i, pile in pairs(gEquipPiles) do
+                pile:Spew()
+            end
+        end)
+
+

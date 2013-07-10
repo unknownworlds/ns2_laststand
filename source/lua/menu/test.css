@@ -1,0 +1,141 @@
+css = [[
+
+window.main_frame
+{
+
+    background-color: #FFFFFF;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    
+}
+
+window.main_frame image.logo
+{
+    
+    height: 158px;
+    width: 717px;
+    left: -356px;
+    horizontal-align: center;
+    top: 40px;
+    opacity: 0.0;
+    opacity: 1.0 time(5);
+    background-image: path(ui/menu/logo.dds) coords(0.0,0.0,1.0,1.0);
+
+}
+
+window.main_frame image.menu_bg_closed
+{
+
+    horizontal-align: center;
+    vertical-align: center;
+    
+    left: -30px;
+    width: 60;
+    
+    top: -100px;
+    height: 380;
+    
+    background-color: #FFFFFF;
+    background-image: path(ui/menu/menu_bg.dds) coords(0.43, 0.0, 0.57, 1.0);
+
+}
+
+window.main_frame image.menu_bg_open
+{
+
+    left: -150px time(1);
+    width: 300 time(1);
+    background-image: path(ui/menu/menu_bg.dds) coords(0.0, 0.0, 1.0, 1.0) time(1);
+    
+}
+
+image.menu_bg_closed image.border_left, image.menu_bg_closed image.border_right
+{
+    height: 420px;
+    top: -20px;
+    width: 60px;
+}
+
+image.menu_bg_closed image.border_left
+{
+    background-image: path(ui/menu/menu_bg_border.dds);
+    horizontal-align: left;
+    left: -30px;
+}
+
+image.menu_bg_closed image.border_right
+{
+    background-image: path(ui/menu/menu_bg_border.dds) coords(1.0, 0.0, 0.0, 1.0);
+    horizontal-align: right;
+    left: -30px;
+}
+
+window content
+{
+    background-image: path(ui/menu/createserver.dds) coords(0.0,0.0,1.0,1.0);
+}
+
+window.main_frame link
+{
+    hover-text-color: #FA3322;
+    text-color: #FFFFFF;
+    font-size: 20;
+    background-color: rgba(0,0,0,1);
+    horizontal-align: center;
+    vertical-align: center;
+    border-width: 1px;
+    border-color: rgba(0.7, 0.4, 0.2, 0.0);
+    border-color: rgb(0.7, 0.4, 0.2, 1.0) time(2) func(AnimateQuadratic);
+    text-padding: 4px;
+    
+}
+
+link.play_online
+{
+    top: -40px;
+}
+
+link.options
+{
+    top: 0px;
+}
+
+link.credits
+{
+    top: 40px;
+}
+
+link.create
+{
+    top: 80px;
+
+}
+
+link.return
+{
+
+    top: 120px;
+
+}
+
+link.exit
+{
+
+    top: 160px;
+
+}
+
+window.main_menu_window
+{
+    width: 600px;
+    height: 90%;
+    top: 20px;
+    left: -300px;
+    vertical-align: top;
+    horizontal-align: center;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+]]

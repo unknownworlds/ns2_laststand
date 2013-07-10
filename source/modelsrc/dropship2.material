@@ -1,0 +1,6 @@
+shader = "models/marine/marine.surface_shader"
+albedoMap = "models/dropship2.dds"
+normalMap = "models/dropship2_normal.dds"
+specularMap = "models/dropship2_spec.dds"
+emissiveMap = "models/dropship2_illum.dds"
+surface = "metal"
